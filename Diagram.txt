@@ -1,0 +1,42 @@
+/*                      Drawn the class diagrams including all the relations among the classes.
+                +-----------------------+                                       +---------------------------+
+                | (abstract) Vehicle    |                                       |       Util                |
+                +-----------------------+                                       +---------------------------+
+                |  - id: int            | (uses getRandomString() from Util)    +---------------------------+
+                |  - brand: String      |                                       | getRandomString(): String |
+                |  - year: int          |                                       +---------------------------+
+                +-----------------------+
+                | + (abstract) startEngine(): void |
+                | + getId(): String     |
+                | + setId(): void       |
+                | + getBrand(): String  |
+                | + setBrand(): void    |
+                | + getYear(): int      |
+                | + setYear(): void     |
+                +-----------------------+
+                            ^
+                            |                                                   
+                            |---------------------------------------------------|
+                            |                                                   |
+            +----------------------------+                          +----------------------------+
+            | Motorcycle extends Vehicle |                          |    Car extends Vehicle     |
+            +----------------------------+                          +----------------------------+
+            | - hasSideCar: boolean      |                          | - numberOfSeats: int       |
+            +----------------------------+                          +----------------------------+
+            | + setHasSideCar(): void    |                          | + getNumberOfSeats(): int  |
+            | + getHasSideCar(): boolean |                          | + setNumberOfSeats(): void |
+            | + startEngine(): void      |                          | + startEngine(): void      |
+            +----------------------------+                          +----------------------------+
+                        
+                        
+                        
+                        
+            +----------------------------+
+            |             Main           | (uses dependency on all of them)
+            +----------------------------+
+            | + main(String[] args)      |
+            | + race(Vehicle[] vehicles) |
+            +----------------------------+
+
+    RandomDemo.java is created just to test Util.java (getRandomString() method), the reason why it's not included in this diagram
+ */
